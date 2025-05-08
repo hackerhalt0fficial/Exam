@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UpskillNexus Linux Fundamentals CTF - Test your Linux skills with our capture the flag challenges">
+    <title>Linux Fundamentals CTF | UpskillNexus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="/logo.png" alt="UpskillNexus Logo" class="logo">
+                <h1>UpskillNexus</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#challenges">Challenges</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h2>Linux Fundamentals CTF</h2>
+                <p class="subtitle">Test your basic Linux skills to capture the flags and earn your certification</p>
+                <a href="#challenges" class="cta-button">Start Challenges</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2 class="section-title">About This CTF</h2>
+            <div class="about-content">
+                <p>This Capture The Flag (CTF) challenge is designed by UpskillNexus to help you master fundamental Linux skills. Each level presents a real-world scenario that tests your knowledge of Linux commands and system administration.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-terminal"></i>
+                        <h3>Practical Learning</h3>
+                        <p>Hands-on challenges that mimic real Linux administration tasks</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-flag"></i>
+                        <h3>20 Levels</h3>
+                        <p>Progressively challenging levels covering all Linux fundamentals</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Certification</h3>
+                        <p>Earn a certificate upon completion to showcase your skills</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges" class="challenges-section">
+            <h2 class="section-title">CTF Challenges</h2>
+            <div class="challenges-container">
+                <!-- Level 1 -->
+                <div class="challenge-card" id="level1">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 1</span>
+                        <h3>File Navigation</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">You're in a directory with a file named 'secret.txt'. How would you view its contents?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(1)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint1">
+                                <p>Use the command that displays file contents</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer1" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(1)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result1"></div>
+                    </div>
+                </div>
+
+                <!-- Level 2 -->
+                <div class="challenge-card" id="level2">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 2</span>
+                        <h3>File Permissions</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">A script 'runme.sh' isn't executable. What command would make it executable for the owner?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(2)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint2">
+                                <p>Use chmod with the appropriate permission code</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer2" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(2)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result2"></div>
+                    </div>
+                </div>
+
+                <!-- Level 3 -->
+                <div class="challenge-card" id="level3">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 3</span>
+                        <h3>Process Management</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you find all processes running as the user 'www-data'?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(3)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint3">
+                                <p>Use ps with user filtering</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer3" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(3)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result3"></div>
+                    </div>
+                </div>
+
+                <!-- Level 4 -->
+                <div class="challenge-card" id="level4">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 4</span>
+                        <h3>Text Processing</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you count the number of lines in a file called 'data.log'?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(4)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint4">
+                                <p>There's a command specifically for counting lines</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer4" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(4)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result4"></div>
+                    </div>
+                </div>
+
+                <!-- Level 5 -->
+                <div class="challenge-card" id="level5">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 5</span>
+                        <h3>Networking</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">What command would show you all listening TCP ports on your system?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(5)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint5">
+                                <p>Use netstat or ss with the right options</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer5" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(5)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result5"></div>
+                    </div>
+                </div>
+
+                <!-- Level 6 -->
+                <div class="challenge-card" id="level6">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 6</span>
+                        <h3>Log Files</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you check the last 20 lines of the system log file (/var/log/syslog)?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(6)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint6">
+                                <p>Use a command that can show the end of a file</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer6" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(6)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result6"></div>
+                    </div>
+                </div>
+
+                <!-- Level 7 -->
+                <div class="challenge-card" id="level7">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 7</span>
+                        <h3>Network Configuration</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you check the IP address of your system?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(7)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint7">
+                                <p>There are multiple commands to show network information</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer7" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(7)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result7"></div>
+                    </div>
+                </div>
+
+                <!-- Level 8 -->
+                <div class="challenge-card" id="level8">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 8</span>
+                        <h3>Text Searching</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you use grep to search for the word "error" in all .log files in the current directory?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(8)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint8">
+                                <p>Use grep with a wildcard for file selection</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer8" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(8)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result8"></div>
+                    </div>
+                </div>
+
+                <!-- Level 9 -->
+                <div class="challenge-card" id="level9">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 9</span>
+                        <h3>User Management</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you check which users are currently logged in to the system?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(9)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint9">
+                                <p>There's a simple command that shows logged in users</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer9" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(9)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result9"></div>
+                    </div>
+                </div>
+
+                <!-- Level 10 -->
+                <div class="challenge-card" id="level10">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 10</span>
+                        <h3>Web Servers</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you find the installation path of Apache web server?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(10)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint10">
+                                <p>Use a command that locates binaries and their paths</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer10a" placeholder="Enter your command" class="answer-input">
+                        </div>
+                        <p class="challenge-question">How would you host a simple Python HTTP server on port 8000?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(10)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint10b">
+                                <p>Python has a built-in module for this</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer10b" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(10)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result10"></div>
+                    </div>
+                </div>
+
+                <!-- Level 11 -->
+                <div class="challenge-card" id="level11">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 11</span>
+                        <h3>Directory Creation</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you create a new directory called "projects"?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(11)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint11">
+                                <p>Use the command for making directories</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer11" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(11)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result11"></div>
+                    </div>
+                </div>
+
+                <!-- Level 12 -->
+                <div class="challenge-card" id="level12">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 12</span>
+                        <h3>File Creation</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you create an empty file named "notes.txt"?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(12)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint12">
+                                <p>There are multiple ways to create empty files</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer12" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(12)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result12"></div>
+                    </div>
+                </div>
+
+                <!-- Level 13 -->
+                <div class="challenge-card" id="level13">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 13</span>
+                        <h3>Current Directory</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you show your current working directory?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(13)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint13">
+                                <p>Print working directory</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer13" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(13)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result13"></div>
+                    </div>
+                </div>
+
+                <!-- Level 14 -->
+                <div class="challenge-card" id="level14">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 14</span>
+                        <h3>File Copying</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you copy "file1.txt" to "file2.txt"?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(14)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint14">
+                                <p>Use the copy command</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer14" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(14)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result14"></div>
+                    </div>
+                </div>
+
+                <!-- Level 15 -->
+                <div class="challenge-card" id="level15">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 15</span>
+                        <h3>File Moving</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you rename "oldname.txt" to "newname.txt"?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(15)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint15">
+                                <p>The same command can move or rename files</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer15" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(15)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result15"></div>
+                    </div>
+                </div>
+
+                <!-- Level 16 -->
+                <div class="challenge-card" id="level16">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 16</span>
+                        <h3>File Deletion</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you delete a file called "temp.txt"?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(16)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint16">
+                                <p>Use the remove command</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer16" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(16)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result16"></div>
+                    </div>
+                </div>
+
+                <!-- Level 17 -->
+                <div class="challenge-card" id="level17">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 17</span>
+                        <h3>Directory Navigation</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you change to the parent directory?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(17)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint17">
+                                <p>Change directory with special path</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer17" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(17)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result17"></div>
+                    </div>
+                </div>
+
+                <!-- Level 18 -->
+                <div class="challenge-card" id="level18">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 18</span>
+                        <h3>Manual Pages</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you view the manual page for the ls command?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(18)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint18">
+                                <p>Use the manual command</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer18" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(18)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result18"></div>
+                    </div>
+                </div>
+
+                <!-- Level 19 -->
+                <div class="challenge-card" id="level19">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 19</span>
+                        <h3>System Information</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you check your Linux distribution and version?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(19)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint19">
+                                <p>There are multiple commands for this</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer19" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(19)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result19"></div>
+                    </div>
+                </div>
+
+                <!-- Level 20 -->
+                <div class="challenge-card" id="level20">
+                    <div class="challenge-header">
+                        <span class="challenge-number">Level 20</span>
+                        <h3>Clear Screen</h3>
+                    </div>
+                    <div class="challenge-content">
+                        <p class="challenge-question">How would you clear your terminal screen?</p>
+                        <div class="hint-toggle">
+                            <button class="hint-button" onclick="toggleHint(20)">Show Hint <i class="fas fa-chevron-down"></i></button>
+                            <div class="hint-content" id="hint20">
+                                <p>Use the clear command or its shortcut</p>
+                            </div>
+                        </div>
+                        <div class="answer-form">
+                            <input type="text" id="answer20" placeholder="Enter your command" class="answer-input">
+                            <button onclick="checkAnswer(20)" class="submit-button">Submit Answer</button>
+                        </div>
+                        <div class="result" id="result20"></div>
+                    </div>
+                </div>
+
+                <!-- Final Completion Section -->
+                <div id="completion-certificate" class="hidden">
+                    <div class="certificate-container">
+                        <div class="certificate-header">
+                            <img src="upskillnexus-logo.png" alt="UpskillNexus Logo" class="certificate-logo">
+                            <h2>Linux Fundamentals Certification</h2>
+                        </div>
+                        <div class="certificate-body">
+                            <p>This certifies that</p>
+                            <h3 class="recipient-name">[Participant Name]</h3>
+                            <p>has successfully completed all challenges in the UpskillNexus Linux Fundamentals CTF</p>
+                            <div class="flag-display">
+                                <p>Final Flag:</p>
+                                <div class="flag">CTF{L1nux_Fundamentals_Master}</div>
+                            </div>
+                            <button onclick="copyFlag()" class="copy-button">
+                                <i class="fas fa-copy"></i> Copy Flag
+                            </button>
+                        </div>
+                        <div class="certificate-footer">
+                            <div class="signature">
+                                <p>UpskillNexus Team</p>
+                                <img src="signature.png" alt="Signature" class="signature-image">
+                            </div>
+                            <p class="date">Date: <span id="certificate-date"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>UpskillNexus</h3>
+                    <p><i class="fas fa-envelope"></i> info@upskillnexus.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="/logo.png" alt="UpskillNexus Logo" class="logo">
+                <h3>UpskillNexus</h3>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 UpskillNexus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
